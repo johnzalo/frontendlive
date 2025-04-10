@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live HTML/CSS/JS Trainer</title>
+
+    <!-- CodeMirror CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/addon/fold/foldgutter.min.css">
+    
+    <!-- CodeMirror Themes (up to 50) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/3024-day.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/3024-night.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/abbott.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/abcdef.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/ambiance.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/ambiance-mobile.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/ayu-dark.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/ayu-mirage.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/base16-dark.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/base16-light.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/bespin.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/blackboard.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/cobalt.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/colorforth.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/darcula.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/dracula.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/duotone-dark.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/duotone-light.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/eclipse.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/elegant.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/erlang-dark.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/gruvbox-dark.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/hopscotch.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/icecoder.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/idea.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/isotope.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/lesser-dark.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/liquibyte.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/lucario.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/material.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/material-darker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/material-palenight.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/material-ocean.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/mbo.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/mdn-like.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/midnight.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/monokai.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/moxer.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/neat.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/neo.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/night.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/nord.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/oceanic-next.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/panda-syntax.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/paraiso-dark.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/pastel-on-dark.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/railscasts.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/rubyblue.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/seti.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/shadowfox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/the-matrix.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/tomorrow-night-bright.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/twilight.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/vibrant-ink.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/xq-dark.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/xq-light.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/yeti.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/yonce.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/theme/zenburn.min.css">
+
+    <style>
+        /* Basic Reset & Body Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+        }
+
+        /* Left Column (Inputs) - FIXED WIDTH */
+        #left-col {
+            width: 40%; /* Fixed width - will be adjusted by settings */
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            background-color: #252526;
+            flex-shrink: 0;
+             border-right: 1px solid #444;
+        }
+
+        /* Right Column (Preview) - FIXED WIDTH */
+        #preview-col {
+            width: 60%; /* Fixed width - will be adjusted by settings */
+            height: 100%;
+            background-color: #1e1e1e; /* Match body bg */
+            display: flex;
+        }
+
+        /* Editor Containers */
+        .editor-container {
+            width: 100%;
+            overflow: hidden;
+            transition: height 0.3s ease, border-bottom-width 0.1s ease;
+            border-bottom: 1px solid #444;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Editor Header (Toggle Trigger) */
+        .editor-header {
+            padding: 4px 8px;
+            background-color: #333;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+            user-select: none;
+            border-bottom: 1px solid #444;
+        }
+        .editor-header:hover {
+            background-color: #3c3c3c;
+        }
+        .toggle-icon {
+            font-family: sans-serif;
+            font-size: 10px;
+            margin-left: 10px;
+            color: #aaa;
+        }
+
+        /* CodeMirror Editor Styling */
+        .CodeMirror {
+            flex-grow: 1;
+            height: auto !important;
+            font-size: 14px; /* Will be adjusted by settings */
+            line-height: 1.5;
+            background-color: #252526;
+        }
+        /* Theme Specifics */
+        .cm-s-material-darker.CodeMirror { background-color: #252526; color: #eeffff; }
+        .cm-s-material-darker .CodeMirror-gutters { background: #252526; border-right: 1px solid #333; }
+        .cm-s-material-darker .CodeMirror-cursor { border-left: 1px solid #eeffff; }
+        .cm-s-material-darker .CodeMirror-activeline-background { background: rgba(255, 255, 255, 0.05); }
+        .cm-s-material-darker .CodeMirror-selected { background: rgba(73, 72, 62, 0.7); }
+
+        /* Code Folding styles */
+        .CodeMirror-foldmarker {
+            color: #fff;
+            text-shadow: #000 1px 1px 2px, #000 -1px -1px 2px, #000 1px -1px 2px, #000 -1px 1px 2px;
+            font-family: arial;
+            line-height: .3;
+            cursor: pointer;
+            padding: 0 3px;
+        }
+        .CodeMirror-foldgutter {
+            width: 1.2em;
+        }
+        .CodeMirror-foldgutter-open, .CodeMirror-foldgutter-folded {
+            cursor: pointer;
+        }
+        .CodeMirror-foldgutter-open:after {
+            content: "▾";
+            color: #888;
+        }
+        .CodeMirror-foldgutter-folded:after {
+            content: "▸";
+            color: #888;
+        }
+
+        /* --- STYLED SCROLLBARS --- [UPDATED] */
+        .CodeMirror .CodeMirror-scroll {
+            overflow: auto !important; /* Explicitly enable scroll */
+
+            /* Firefox scrollbar styling */
+            scrollbar-width: none !important;  /* Hide scrollbar in Firefox */
+            scrollbar-color: transparent transparent !important;  /* Make scrollbar transparent */
+        }
+
+        /* WebKit (Chrome, Safari, Edge) scrollbar styling */
+        .CodeMirror .CodeMirror-scroll::-webkit-scrollbar {
+            width: 0 !important;  /* Remove scrollbar width */
+            height: 0 !important; /* Remove scrollbar height */
+            display: none !important; /* Hide scrollbar */
+        }
+        .CodeMirror .CodeMirror-scroll::-webkit-scrollbar-track {
+            background: transparent !important; /* Make track transparent */
+        }
+        .CodeMirror .CodeMirror-scroll::-webkit-scrollbar-thumb {
+            background-color: transparent !important; /* Make thumb transparent */
+        }
+        .CodeMirror .CodeMirror-scroll::-webkit-scrollbar-thumb:hover {
+            background-color: transparent !important; /* Make hover state transparent */
+        }
+        /* --- END STYLED SCROLLBARS --- */
+
+        /* Preview Iframe */
+        #preview-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background-color: #ffffff; /* Start with white content bg */
+            flex-grow: 1;
+        }
+
+        /* Collapsed State */
+        .editor-container.collapsed {
+            border-bottom-width: 0 !important;
+        }
+        .editor-container.collapsed .CodeMirror {
+             display: none;
+        }
+        .editor-container.collapsed .editor-header {
+             border-bottom: none;
+        }
+
+        /* Settings Modal */
+        #settings-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: transparent; /* Changed from rgba(0, 0, 0, 0.7) to transparent */
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        #settings-panel {
+            background-color: #252526;
+            width: 400px;
+            border-radius: 6px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            color: #d4d4d4;
+        }
+
+        #settings-panel h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .settings-group {
+            margin-bottom: 16px;
+        }
+
+        .settings-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 13px;
+        }
+
+        .settings-group input[type="range"] {
+            width: 100%;
+            background-color: #333;
+            height: 6px;
+            border-radius: 3px;
+            outline: none;
+        }
+
+        .settings-group input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #0078d7;
+            cursor: pointer;
+        }
+
+        .settings-group select {
+            width: 100%;
+            padding: 6px 8px;
+            border: 1px solid #444;
+            background-color: #333;
+            color: #d4d4d4;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .settings-value {
+            float: right;
+            font-size: 13px;
+            color: #888;
+        }
+
+        /* Gradient Separator */
+        .settings-separator {
+            height: 1px;
+            width: 100%;
+            background: linear-gradient(to right, transparent, rgba(120, 130, 180, 0.7), transparent);
+            margin: 20px 0;
+        }
+
+        /* Codebase Management */
+        .codebase-input {
+            width: 100%;
+            padding: 6px 8px;
+            border: 1px solid #444;
+            background-color: #333;
+            color: #d4d4d4;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .codebase-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .codebase-button {
+            padding: 4px 8px;
+            border: none;
+            border-radius: 3px;
+            font-size: 12px;
+            cursor: pointer;
+            background-color: #333;
+            color: #d4d4d4;
+            flex: 1;
+        }
+
+        .codebase-button:hover {
+            background-color: #444;
+        }
+
+        .codebase-button.save {
+            background-color: #0e639c;
+        }
+
+        .codebase-button.save:hover {
+            background-color: #1177bb;
+        }
+
+        .codebase-button.delete {
+            background-color: #5a1c1c;
+        }
+
+        .codebase-button.delete:hover {
+            background-color: #6e2222;
+        }
+
+        .settings-buttons {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+
+        .settings-buttons button {
+            padding: 6px 14px;
+            border: none;
+            border-radius: 4px;
+            background-color: #0078d7;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .settings-buttons button:hover {
+            background-color: #0086f0;
+        }
+
+        .settings-buttons button.cancel {
+            background-color: #333;
+        }
+
+        .settings-buttons button.cancel:hover {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Structure: Left Col -> Right Col -->
+    <div id="left-col">
+        <div id="html-editor-container" class="editor-container">
+             <div class="editor-header" id="html-header">
+                 <span>HTML</span>
+                 <span class="toggle-icon">▲</span>
+             </div>
+            <!-- CodeMirror HTML instance -->
+        </div>
+        <div id="css-editor-container" class="editor-container">
+             <div class="editor-header" id="css-header">
+                 <span>CSS</span>
+                 <span class="toggle-icon">▲</span>
+             </div>
+             <!-- CodeMirror CSS instance -->
+        </div>
+         <div id="js-editor-container" class="editor-container">
+              <div class="editor-header" id="js-header">
+                 <span>JavaScript</span>
+                 <span class="toggle-icon">▲</span>
+             </div>
+             <!-- CodeMirror JS instance -->
+         </div>
+    </div>
+
+    <div id="preview-col">
+        <iframe id="preview-frame" title="Live Preview" sandbox="allow-scripts allow-same-origin"></iframe>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal">
+        <div id="settings-panel">
+            <div class="settings-group">
+                <select id="theme-select">
+                    <option value="3024-day">3024 Day</option>
+                    <option value="3024-night">3024 Night</option>
+                    <option value="abbott">Abbott</option>
+                    <option value="abcdef">ABCDEF</option>
+                    <option value="ambiance">Ambiance</option>
+                    <option value="ambiance-mobile">Ambiance Mobile</option>
+                    <option value="ayu-dark">Ayu Dark</option>
+                    <option value="ayu-mirage">Ayu Mirage</option>
+                    <option value="base16-dark">Base16 Dark</option>
+                    <option value="base16-light">Base16 Light</option>
+                    <option value="bespin">Bespin</option>
+                    <option value="blackboard">Blackboard</option>
+                    <option value="cobalt">Cobalt</option>
+                    <option value="colorforth">Colorforth</option>
+                    <option value="darcula">Darcula</option>
+                    <option value="dracula">Dracula</option>
+                    <option value="duotone-dark">Duotone Dark</option>
+                    <option value="duotone-light">Duotone Light</option>
+                    <option value="eclipse">Eclipse</option>
+                    <option value="elegant">Elegant</option>
+                    <option value="erlang-dark">Erlang Dark</option>
+                    <option value="gruvbox-dark">Gruvbox Dark</option>
+                    <option value="hopscotch">Hopscotch</option>
+                    <option value="icecoder">Icecoder</option>
+                    <option value="idea">Idea</option>
+                    <option value="isotope">Isotope</option>
+                    <option value="lesser-dark">Lesser Dark</option>
+                    <option value="liquibyte">Liquibyte</option>
+                    <option value="lucario">Lucario</option>
+                    <option value="material">Material</option>
+                    <option value="material-darker">Material Darker</option>
+                    <option value="material-palenight">Material Palenight</option>
+                    <option value="material-ocean">Material Ocean</option>
+                    <option value="mbo">MBO</option>
+                    <option value="mdn-like">MDN Like</option>
+                    <option value="midnight">Midnight</option>
+                    <option value="monokai">Monokai</option>
+                    <option value="moxer">Moxer</option>
+                    <option value="neat">Neat</option>
+                    <option value="neo">Neo</option>
+                    <option value="night">Night</option>
+                    <option value="nord">Nord</option>
+                    <option value="oceanic-next">Oceanic Next</option>
+                    <option value="panda-syntax">Panda Syntax</option>
+                    <option value="paraiso-dark">Paraiso Dark</option>
+                    <option value="pastel-on-dark">Pastel On Dark</option>
+                    <option value="railscasts">Railscasts</option>
+                    <option value="rubyblue">Ruby Blue</option>
+                    <option value="seti">Seti</option>
+                    <option value="shadowfox">Shadowfox</option>
+                    <option value="the-matrix">The Matrix</option>
+                    <option value="tomorrow-night-bright">Tomorrow Night Bright</option>
+                    <option value="twilight">Twilight</option>
+                    <option value="vibrant-ink">Vibrant Ink</option>
+                    <option value="xq-dark">XQ Dark</option>
+                    <option value="xq-light">XQ Light</option>
+                    <option value="yeti">Yeti</option>
+                    <option value="yonce">Yonce</option>
+                    <option value="zenburn">Zenburn</option>
+                </select>
+            </div>
+            
+            <div class="settings-group">
+                <label for="editor-width-slider">Editor Width <span id="editor-width-value" class="settings-value">40%</span></label>
+                <input type="range" id="editor-width-slider" min="0" max="100" value="40">
+            </div>
+            
+            <!-- Gradient Separator -->
+            <div class="settings-separator"></div>
+            
+            <!-- Codebase Management -->
+            <div class="settings-group">
+                <input type="text" id="codebase-name" class="codebase-input" placeholder="Enter codebase name...">
+                
+                <select id="codebase-list" class="codebase-input">
+                    <option value="" disabled selected>Select saved codebase</option>
+                </select>
+                
+                <div class="codebase-actions">
+                    <button id="save-codebase" class="codebase-button save">Save</button>
+                    <button id="delete-codebase" class="codebase-button delete">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CodeMirror JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/mode/htmlmixed/htmlmixed.min.js"></script>
+    <!-- Code Folding Addons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/addon/fold/foldcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/addon/fold/foldgutter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/addon/fold/brace-fold.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/addon/fold/xml-fold.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.15/addon/fold/comment-fold.min.js"></script>
+
+    <script>
+        // --- Configuration ---
+        const editorHeaderHeight = 27;
+        const localStorageKeys = {
+            html: 'liveTrainerHtmlCode',
+            css: 'liveTrainerCssCode',
+            js: 'liveTrainerJsCode',
+            settings: 'liveTrainerSettings',
+            codebases: 'liveTrainerCodebases'
+        };
+        const styleElementId = 'live-preview-style';
+        const scriptElementId = 'live-preview-script';
+
+        // --- Get references to DOM elements ---
+        const leftCol = document.getElementById('left-col');
+        const previewCol = document.getElementById('preview-col');
+        const previewFrame = document.getElementById('preview-frame');
+
+        // Settings elements
+        const settingsModal = document.getElementById('settings-modal');
+        const editorWidthSlider = document.getElementById('editor-width-slider');
+        const editorWidthValue = document.getElementById('editor-width-value');
+        const themeSelect = document.getElementById('theme-select');
+        
+        // Codebase elements
+        const codebaseNameInput = document.getElementById('codebase-name');
+        const codebaseList = document.getElementById('codebase-list');
+        const saveCodebaseBtn = document.getElementById('save-codebase');
+        const deleteCodebaseBtn = document.getElementById('delete-codebase');
+
+        // Editor elements
+        const editors = [
+            { id: 'html', container: document.getElementById('html-editor-container'), header: document.getElementById('html-header'), instance: null },
+            { id: 'css', container: document.getElementById('css-editor-container'), header: document.getElementById('css-header'), instance: null },
+            { id: 'js', container: document.getElementById('js-editor-container'), header: document.getElementById('js-header'), instance: null }
+        ];
+
+        // --- Default settings ---
+        let settings = {
+            editorWidth: 40,
+            theme: 'material-darker',
+            editorStates: { html: false, css: false, js: false } // false = expanded, true = collapsed
+        };
+        
+        // --- Codebases storage ---
+        let codebases = {};
+
+        // --- Flag to indicate if initial srcdoc load is done ---
+        let initialLoadComplete = false;
+
+        // --- Initial Content --- LOAD FROM LOCAL STORAGE OR EMPTY
+        const initialHtmlContent = localStorage.getItem(localStorageKeys.html) || '';
+        const initialCssContent = localStorage.getItem(localStorageKeys.css) || '';
+        const initialJsContent = localStorage.getItem(localStorageKeys.js) || '';
+
+        // --- Load saved settings ---
+        function loadSettings() {
+            const savedSettings = localStorage.getItem(localStorageKeys.settings);
+            if (savedSettings) {
+                settings = JSON.parse(savedSettings);
+
+                // Ensure editorStates exists in saved data, default if not
+                settings.editorStates = settings.editorStates || { html: false, css: false, js: false };
+                
+                // Update UI to match saved settings
+                editorWidthSlider.value = settings.editorWidth;
+                editorWidthValue.textContent = settings.editorWidth + '%';
+                
+                themeSelect.value = settings.theme;
+
+                // Restore editor collapsed states
+                editors.forEach(ed => {
+                    if (settings.editorStates[ed.id]) { // If true (collapsed)
+                        ed.container.classList.add('collapsed');
+                    } else {
+                        ed.container.classList.remove('collapsed');
+                    }
+                });
+            }
+            
+            // Apply settings to editors
+            applySettings();
+        }
+        
+        // --- Load codebases ---
+        function loadCodebasesFromStorage() {
+            const savedCodebases = localStorage.getItem(localStorageKeys.codebases);
+            if (savedCodebases) {
+                codebases = JSON.parse(savedCodebases);
+                updateCodebaseList();
+            }
+        }
+        
+        // --- Update codebase dropdown ---
+        function updateCodebaseList() {
+            // Clear list except for the placeholder
+            while (codebaseList.options.length > 1) {
+                codebaseList.remove(1);
+            }
+            
+            // Add saved codebases
+            Object.keys(codebases).forEach(name => {
+                const option = document.createElement('option');
+                option.value = name;
+                option.textContent = name;
+                codebaseList.appendChild(option);
+            });
+        }
+        
+        // --- Save current code to a codebase ---
+        function saveCodebase() {
+            const name = codebaseNameInput.value.trim();
+            if (!name) {
+                // Flash the input to indicate it needs a value
+                codebaseNameInput.style.borderColor = '#f44';
+                setTimeout(() => { codebaseNameInput.style.borderColor = '#444'; }, 500);
+                return;
+            }
+            
+            // Save the current code
+            codebases[name] = {
+                html: editors[0].instance.getValue(),
+                css: editors[1].instance.getValue(),
+                js: editors[2].instance.getValue(),
+                timestamp: Date.now()
+            };
+            
+            // Save to localStorage
+            localStorage.setItem(localStorageKeys.codebases, JSON.stringify(codebases));
+            
+            // Update the dropdown
+            updateCodebaseList();
+            
+            // Select the saved codebase
+            codebaseList.value = name;
+        }
+        
+        // --- Load a saved codebase ---
+        function loadCodebase() {
+            const name = codebaseList.value;
+            if (!name || !codebases[name]) return;
+            
+            const codebase = codebases[name];
+            
+            // Load code into editors
+            editors[0].instance.setValue(codebase.html);
+            editors[1].instance.setValue(codebase.css);
+            editors[2].instance.setValue(codebase.js);
+            
+            // Update preview
+            updatePreviewAndSave();
+            
+            // Set the name input to match the loaded codebase
+            codebaseNameInput.value = name;
+        }
+        
+        // --- Delete a codebase ---
+        function deleteCodebase() {
+            const name = codebaseList.value;
+            if (!name || !codebases[name]) return;
+            
+            // Remove from storage
+            delete codebases[name];
+            localStorage.setItem(localStorageKeys.codebases, JSON.stringify(codebases));
+            
+            // Update dropdown
+            updateCodebaseList();
+            
+            // Clear name input if it matches the deleted codebase
+            if (codebaseNameInput.value === name) {
+                codebaseNameInput.value = '';
+            }
+            
+            // Reset dropdown to placeholder
+            codebaseList.selectedIndex = 0;
+        }
+        
+        // --- Apply current settings to the UI ---
+        function applySettings() {
+            // Apply editor width
+            leftCol.style.width = settings.editorWidth + '%';
+            previewCol.style.width = (100 - settings.editorWidth) + '%';
+            
+            // Apply theme to each editor
+            editors.forEach(ed => {
+                if (ed.instance) {
+                    ed.instance.setOption('theme', settings.theme);
+                }
+            });
+            
+            // Refresh editors
+            refreshVisibleCodeMirrors();
+        }
+
+        // --- Save settings to localStorage ---
+        function saveSettings() {
+            localStorage.setItem(localStorageKeys.settings, JSON.stringify(settings));
+        }
+
+        // --- Settings modal event handlers ---
+        function openSettingsModal() {
+            settingsModal.style.display = 'flex';
+        }
+        
+        function closeSettingsModal() {
+            // Update settings object
+            settings.editorWidth = parseInt(editorWidthSlider.value);
+            settings.theme = themeSelect.value;
+            
+            // Save to localStorage
+            saveSettings();
+            
+            // Hide modal
+            settingsModal.style.display = 'none';
+        }
+        
+        // Close modal when clicking outside the settings panel
+        settingsModal.addEventListener('click', function(event) {
+            // If the click is on the modal background (not on the settings panel)
+            if (event.target === settingsModal) {
+                closeSettingsModal();
+            }
+        });
+        
+        // Update editor width display and preview while dragging
+        editorWidthSlider.addEventListener('input', () => {
+            const newWidth = parseInt(editorWidthSlider.value);
+            editorWidthValue.textContent = newWidth + '%';
+            
+            // Preview the width
+            leftCol.style.width = newWidth + '%';
+            previewCol.style.width = (100 - newWidth) + '%';
+            
+            // Refresh editors
+            refreshVisibleCodeMirrors();
+        });
+        
+        // Preview theme change on dropdown change
+        themeSelect.addEventListener('change', () => {
+            editors.forEach(ed => {
+                if (ed.instance) {
+                    ed.instance.setOption('theme', themeSelect.value);
+                }
+            });
+        });
+        
+        // Global Ctrl+M handler
+        document.addEventListener('keydown', function(event) {
+            // Check for Ctrl+M
+            if (event.ctrlKey && event.key === 'm') {
+                event.preventDefault();
+                openSettingsModal();
+            }
+            
+            // Check if the pressed key is Escape
+            if (event.key === 'Escape') {
+                // If settings modal is open, close it
+                if (settingsModal.style.display === 'flex') {
+                    closeSettingsModal();
+                    event.preventDefault();
+                    return;
+                }
+                
+                // Otherwise handle editor focus cycling
+                event.preventDefault();
+                
+                // Find which editor currently has focus
+                let currentEditorIndex = -1;
+                for (let i = 0; i < editors.length; i++) {
+                    if (editors[i].instance.hasFocus()) {
+                        currentEditorIndex = i;
+                        break;
+                    }
+                }
+                
+                // Find the next non-collapsed editor
+                let nextEditorIndex = currentEditorIndex;
+                let expandedEditorFound = false;
+                
+                // Check up to one full cycle through editors
+                for (let i = 0; i < editors.length; i++) {
+                    nextEditorIndex = (nextEditorIndex + 1) % editors.length;
+                    
+                    // If we found a non-collapsed editor, focus it and break
+                    if (!editors[nextEditorIndex].container.classList.contains('collapsed')) {
+                        expandedEditorFound = true;
+                        break;
+                    }
+                }
+                
+                // If we found an expanded editor, focus it
+                if (expandedEditorFound) {
+                    editors[nextEditorIndex].instance.focus();
+                }
+            }
+        });
+
+        // --- Default templates for internal use ---
+        const defaultHtmlTemplate = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+</body>
+</html>`;
+
+        const defaultCssTemplate = `* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}`;
+
+        const defaultJsTemplate = ``;
+
+        // --- Common CodeMirror Options ---
+        const commonEditorOptions = {
+            theme: settings.theme,
+            lineNumbers: false, // Remove line numbers
+            tabSize: 2,
+            lineWrapping: true,
+            foldGutter: true,
+            gutters: ["CodeMirror-foldgutter"],
+            extraKeys: {
+                "Ctrl-Q": function(cm){ cm.foldCode(cm.getCursor()); }
+            }
+        };
+
+        // --- Initialize CodeMirror Editors ---
+        editors[0].instance = CodeMirror(editors[0].container, { 
+            ...commonEditorOptions,
+            value: initialHtmlContent, 
+            mode: 'htmlmixed', 
+            autofocus: true 
+        });
+        
+        editors[1].instance = CodeMirror(editors[1].container, { 
+            ...commonEditorOptions,
+            value: initialCssContent, 
+            mode: 'css'
+        });
+        
+        editors[2].instance = CodeMirror(editors[2].container, { 
+            ...commonEditorOptions,
+            value: initialJsContent, 
+            mode: 'javascript'
+        });
+        
+        editors.forEach(ed => ed.container.insertBefore(ed.header, ed.container.firstChild));
+
+        // --- Function to perform the initial iframe load using srcdoc ---
+        function performInitialLoad() {
+             const htmlCode = editors[0].instance.getValue() || defaultHtmlTemplate;
+             const cssCode = editors[1].instance.getValue() || defaultCssTemplate;
+             const jsCode = editors[2].instance.getValue() || defaultJsTemplate;
+
+             previewFrame.srcdoc = `
+                 <!DOCTYPE html>
+                 <html>
+                 <head>
+                     <meta charset="UTF-8">
+                     <title>Preview</title>
+                     <style id="${styleElementId}" type="text/css">${cssCode}</style>
+                 </head>
+                 <body>
+                     ${htmlCode}
+                     <script id="${scriptElementId}">
+                         try {
+                             ${jsCode}
+                         } catch(e) { console.error("Initial JS Error:", e); }
+                     <\/script>
+                 </body>
+                 </html>
+             `;
+             setTimeout(() => {
+                 initialLoadComplete = true;
+                 console.log("Initial load complete. Subsequent updates will use DOM manipulation.");
+             }, 100);
+        }
+
+
+        // --- Function to update the preview iframe VIA DOM MANIPULATION ---
+        function updatePreviewAndSave() {
+            const htmlCode = editors[0].instance.getValue() || defaultHtmlTemplate;
+            const cssCode = editors[1].instance.getValue() || defaultCssTemplate;
+            const jsCode = editors[2].instance.getValue() || defaultJsTemplate;
+
+            // 1. Save to localStorage
+            localStorage.setItem(localStorageKeys.html, htmlCode);
+            localStorage.setItem(localStorageKeys.css, cssCode);
+            localStorage.setItem(localStorageKeys.js, jsCode);
+
+            // 2. Check if initial load is done
+            if (!initialLoadComplete) {
+                 console.log("Waiting for initial load...");
+                 return;
+            }
+
+            // 3. Update preview using DOM manipulation
+            try {
+                const previewDoc = previewFrame.contentDocument || previewFrame.contentWindow.document;
+                if (!previewDoc) { console.error("Cannot access preview document."); return; }
+
+                // Update CSS
+                let styleElement = previewDoc.getElementById(styleElementId);
+                if (!styleElement) {
+                    console.warn("Style element not found, attempting to recreate.");
+                    styleElement = previewDoc.createElement('style');
+                    styleElement.id = styleElementId;
+                    styleElement.type = 'text/css';
+                    (previewDoc.head || previewDoc.querySelector('head')).appendChild(styleElement);
+                }
+                if (styleElement.textContent !== cssCode) { styleElement.textContent = cssCode; }
+
+                // Update HTML Body
+                const bodyElement = previewDoc.body || previewDoc.querySelector('body');
+                if (bodyElement && bodyElement.innerHTML !== htmlCode) { bodyElement.innerHTML = htmlCode; }
+                 else if (!bodyElement) { console.error("Preview body element not found."); return; }
+
+                // Update JS
+                let oldScript = previewDoc.getElementById(scriptElementId);
+                if (oldScript) { oldScript.remove(); }
+
+                const scriptElement = previewDoc.createElement('script');
+                scriptElement.id = scriptElementId;
+                scriptElement.textContent = `
+                    try {
+                        ${jsCode}
+                    } catch (e) {
+                        console.error("JavaScript Error in Preview:", e);
+                        if (document.body) {
+                             const errorPre = document.createElement('pre');
+                             errorPre.style.cssText = 'color: red; background: #fff; padding: 10px; border: 1px solid red; margin: 10px; position: relative; z-index: 9999;';
+                             errorPre.textContent = 'JS Error: ' + e.message;
+                             document.body.appendChild(errorPre);
+                        }
+                    }
+                `;
+                bodyElement.appendChild(scriptElement);
+
+            } catch (e) {
+                console.error("Error updating preview DOM:", e);
+            }
+        }
+
+        // --- Debounce preview updates & saving ---
+        let debounceTimeout;
+        function requestPreviewUpdate() {
+            clearTimeout(debounceTimeout);
+            debounceTimeout = setTimeout(updatePreviewAndSave, 300);
+        }
+        editors.forEach(ed => ed.instance.on('change', requestPreviewUpdate));
+
+
+        // --- Editor Collapsing Logic --- [Working version]
+        function adjustEditorLayout() {
+            const totalHeight = leftCol.offsetHeight;
+            let availableHeight = totalHeight;
+            let visibleEditorCount = 0;
+
+            editors.forEach(ed => {
+                if (ed.container.classList.contains('collapsed')) {
+                    availableHeight -= editorHeaderHeight;
+                     ed.container.style.height = `${editorHeaderHeight}px`;
+                     ed.header.querySelector('.toggle-icon').textContent = '▼';
+                     ed.container.style.borderBottomWidth = '0';
+                } else {
+                    visibleEditorCount++;
+                     ed.header.querySelector('.toggle-icon').textContent = '▲';
+                }
+            });
+
+            if (visibleEditorCount === 0 && editors.length > 0) {
+                 editors.forEach(ed => {
+                     ed.container.style.height = `${editorHeaderHeight}px`;
+                     ed.container.style.borderBottomWidth = '0';
+                 });
+                 editors[editors.length - 1].container.style.borderBottomWidth = '0';
+                 return;
+            }
+
+            const heightPerVisibleEditor = visibleEditorCount > 0 ? availableHeight / visibleEditorCount : 0;
+            let lastVisibleContainer = null;
+
+            editors.forEach(ed => {
+                 if (!ed.container.classList.contains('collapsed')) {
+                     ed.container.style.height = `${heightPerVisibleEditor}px`;
+                     ed.container.style.borderBottomWidth = '1px';
+                     ed.instance.refresh();
+                     lastVisibleContainer = ed.container;
+                 }
+            });
+
+            if (lastVisibleContainer) {
+                lastVisibleContainer.style.borderBottomWidth = '0';
+            }
+             else if (editors.length > 0 && editors[editors.length-1].container.classList.contains('collapsed')) {
+                 let potentialLastVisible = null;
+                 for(let i = editors.length - 2; i >= 0; i--) {
+                     if (!editors[i].container.classList.contains('collapsed')) {
+                         potentialLastVisible = editors[i].container;
+                         break;
+                     }
+                 }
+                 if (potentialLastVisible) potentialLastVisible.style.borderBottomWidth = '0';
+             }
+        }
+
+        editors.forEach(ed => {
+            ed.header.addEventListener('click', () => {
+                ed.container.classList.toggle('collapsed');
+                // Update the setting for this editor
+                settings.editorStates[ed.id] = ed.container.classList.contains('collapsed');
+                // Save the updated settings
+                saveSettings();
+                adjustEditorLayout();
+            });
+        });
+        // --- END Editor Collapsing Logic ---
+
+
+        // --- Utility to refresh visible CodeMirror instances ---
+        function refreshVisibleCodeMirrors() {
+            editors.forEach(ed => {
+                if (!ed.container.classList.contains('collapsed')) {
+                    ed.instance.refresh();
+                }
+            });
+        }
+
+
+        // --- Initial Setup ---
+        function initializeLayout() {
+            loadSettings(); // Load settings first
+            loadCodebasesFromStorage(); // Load saved codebases
+            adjustEditorLayout();
+            performInitialLoad();
+        }
+
+        document.addEventListener('DOMContentLoaded', initializeLayout);
+        window.addEventListener('resize', adjustEditorLayout);
+
+        // --- Codebase event listeners ---
+        saveCodebaseBtn.addEventListener('click', saveCodebase);
+        deleteCodebaseBtn.addEventListener('click', deleteCodebase);
+        
+        // Auto-load codebase when selected
+        codebaseList.addEventListener('change', function() {
+            if (codebaseList.value !== '') {
+                loadCodebase();
+            }
+        });
+        
+        // --- Add ESC key cycling through non-collapsed editors ---
+    </script>
+
+</body>
+</html>
