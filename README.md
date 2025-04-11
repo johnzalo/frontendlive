@@ -1,6 +1,6 @@
 # Live HTML/CSS/JS Trainer
 
-A simple, single-file, vanilla JavaScript web application designed for learning and experimenting with HTML, CSS, and JavaScript in real-time. This tool provides a clean, minimalist environment focused on coding and immediate visual feedback.
+A simple, single-file, coding editor for learning and experimenting with HTML, CSS, and JavaScript.
 
 
 ![Image Alt](https://github.com/johnzalo/frontendlive/blob/6cf4a1ca570a157800b5c1e134dad8dd68160798/screen1.png)
@@ -8,15 +8,12 @@ A simple, single-file, vanilla JavaScript web application designed for learning 
 ## Key Features
 
 *   **Live Preview:** Instantly see the results of your HTML, CSS, and JavaScript code rendered in a preview pane.
-*   **CodeMirror Editors:** Separate, feature-rich editors for HTML, CSS, and JavaScript with:
     *   Syntax highlighting.
     *   Code folding (collapsible code sections via gutter arrows or `Ctrl+Q`).
-    *   Hidden scrollbars (still scrollable).
-*   **Collapsible Editor Windows:** Expand or collapse the HTML, CSS, or JS editor windows to focus on specific parts of your code.
 *   **Customizable Interface (Ctrl+M):**
     *   **Theme Selection:** Choose from 50 different CodeMirror themes (light and dark) to suit your preference.
     *   **Layout Adjustment:** Use a slider to dynamically change the width split (0-100%) between the code editors and the live preview pane.
-*   **Persistence with LocalStorage:**
+*   **All Settings are saved to localstore:**
     *   **Code:** Your latest HTML, CSS, and JS code is automatically saved and restored when you reopen the file.
     *   **Settings:** Your chosen theme, editor width, and the collapsed/expanded state of editor windows are saved and restored.
     *   **Codebases:** Save named snapshots of your entire codebase (HTML, CSS, JS). Load them quickly from a dropdown or delete them when no longer needed.
@@ -44,12 +41,3 @@ A simple, single-file, vanilla JavaScript web application designed for learning 
 6.  **Toggle Editors:** Click the header (HTML, CSS, JavaScript) of an editor window to collapse or expand it.
 7.  **Cycle Focus:** Press `Esc` to jump between the expanded editors.
 
-## Technology
-
-*   **HTML5**
-*   **CSS3**
-*   **Vanilla JavaScript (ES6+)**
-*   **CodeMirror:** Core library for the code editors.
-*   **LocalStorage:** For saving code, settings, and codebases.
-
-Enjoy learning and coding! 
