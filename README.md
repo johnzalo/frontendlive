@@ -2,9 +2,8 @@
 
 A simple, single-file, vanilla JavaScript web application designed for learning and experimenting with HTML, CSS, and JavaScript in real-time. This tool provides a clean, minimalist environment focused on coding and immediate visual feedback.
 
-## Goal
 
-The primary goal is to offer a straightforward, self-contained tool for learning front-end web development concepts by coding directly in the browser with instant results. No build steps, no complex setup – just open the HTML file and start coding.
+![Image Alt](https://github.com/johnzalo/frontendlive/blob/6cf4a1ca570a157800b5c1e134dad8dd68160798/screen1.png)
 
 ## Key Features
 
